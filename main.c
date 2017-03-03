@@ -3,8 +3,6 @@
 
 int main() {
 
-    Mytype a;
-    a.a = 1994;
-    printf("Hello, World %d !\n", a.a);
+    printf("Hello, World !\n");
     return 0;
 }
