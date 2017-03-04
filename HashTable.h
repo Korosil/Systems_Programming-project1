@@ -7,7 +7,7 @@
 typedef struct info_bucket {
 
                    CDR    cdr_info_array [CDR_INFO_ARRAY_SIZE];
-                   int    num_inserted_cdrs;
+                   int    num_inserted_CDRs;
     struct info_bucket*   next_info_bucket_ptr;
 
 } info_bucket;
@@ -19,7 +19,7 @@ typedef info_bucket*  info_bucket_ptr;
 typedef struct record {
 
                char*  number;
-    info_bucket_ptr   info  ;
+    info_bucket_ptr   info;
 
 } record;
 
@@ -28,7 +28,7 @@ typedef struct record {
 
 typedef struct primary_bucket {
 
-                   record*   stored_numbers_array [STORED_NUMBERS_ARRAY_SIZE];
+                   record    stored_numbers_array [STORED_NUMBERS_ARRAY_SIZE];
                       int    num_inserted_numbers;
     struct primary_bucket*   next_primary_bucket_ptr;
 

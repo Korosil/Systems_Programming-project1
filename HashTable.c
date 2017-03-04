@@ -26,7 +26,7 @@ hash_table HT_create (long size) {
 
     }
 
-    if (!(ht->buckets = (primary_bucket_ptr) malloc (size * sizeof (primary_bucket)))) {
+    if (!(ht->buckets = (primary_bucket_ptr*) malloc (size * sizeof (primary_bucket_ptr)))) {
 
         perror ("\tError ");
         return -1;
@@ -46,13 +46,27 @@ hash_table HT_create (long size) {
 int HT_insert (hash_table ht, char* key, CDR data) {
 
     long  position;
+    int   num_inserted_numbers;
 
     position = hash (key);
     if (!ht->buckets[position]) {
 
-        if (!(ht->buckets[position] = ()))
+        if (!(ht->buckets[position] = (primary_bucket_ptr) malloc (sizeof (primary_bucket)))) {
+
+            perror ("\tError ");
+            return -1;
+
+        }
+
+        ht->buckets[position]->num_inserted_numbers = 0;
+        ht->buckets[position]->next_primary_bucket_ptr = NULL;
 
     }
+
+    num_inserted_numbers = ht->buckets[position]->num_inserted_numbers;
+    if (num_inserted_numbers == STORED_NUMBERS_ARRAY_SIZE - 1)
+
+    ht->buckets[position]->stored_numbers_array[num_inserted_numbers]
 
 }
 
