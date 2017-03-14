@@ -12,7 +12,7 @@ typedef enum type {DIRECT_CALL, DATA_USAGE, SMS} callType;
 typedef struct CDR {
 
     char*       cdr_uniq_id;
-    char*       originator_number;
+//    char*       originator_number;
     char*       destination_number;
     Date        date;
     Time        init_time;
@@ -22,3 +22,7 @@ typedef struct CDR {
     int         fault_condition;
 	
 } CDR;
+
+
+
+#define OK  0
